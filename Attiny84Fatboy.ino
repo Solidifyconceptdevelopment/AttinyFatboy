@@ -6,7 +6,7 @@
 #define USB_PIN   9       //pin 3 on mystery µC
 #define DWN_PIN   8       //pin 5 on mystery µC
 
-#define START_VALUE  25   //brigntness level at startup min 60 - max 880
+#define START_VALUE  25   //brightness level at startup min 60 - max 880
 #define B_STEPS      144  //number of brightness steps between min brightness and max brightness
 
 #define LONGPRESS 800     //duration that indicates a long press in ms
@@ -105,9 +105,9 @@ void loop() {
     if (millis() - V_TS > V_DELAY) {
       long voltage = readVcc();
       if (voltage < V_TRESHOLD) {
-        digitalWrite(ON_PIN, LOW);    //turn everythin off when battery is too low
+        digitalWrite(ON_PIN, LOW);    //turn everything off when battery is too low
       } else if (voltage < V_BLINK) {
-        digitalWrite(PWM_PIN, LOW);   //quickly blink the lamp when the voltage is getting critical
+        digitalWrite(PWM_PIN, LOW);   //blink the lamp when the voltage is getting critical
         delay(100);
         analogWrite(PWM_PIN, pgm_read_word(&brightness[b]));
       }
