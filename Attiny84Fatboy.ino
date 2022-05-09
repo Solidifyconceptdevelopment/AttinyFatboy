@@ -122,7 +122,7 @@ void loop() {
       if (millis() - dim_TS > DIM_DELAY) {        //and the dimming delay has expired
         dim_TS = millis();
 
-        b += step_b;                          //increase/decrese brightness
+        b += step_b;                          //increase/decrease brightness
 
         if (b > B_STEPS - 1) b = B_STEPS - 1; //cap brightness at maximum
         if (b < 0) b = 0;                     //cap brightness at minimum
